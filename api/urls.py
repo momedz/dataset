@@ -22,7 +22,6 @@ from api.v1.urls import v1
 urlpatterns = []
 urlpatterns += v1
 urlpatterns += [
-    url(r'^admin/$', admin.site.urls),
-    url(r'^redirect/$', views.retarget),
+    url(r'^admin/', admin.site.urls),
     url(r'', views.close),
 ]
