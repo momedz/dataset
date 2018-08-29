@@ -1,4 +1,4 @@
-FROM python:2.7
+FROM python:2.7-slim
 ENV PYTHONUNBUFFERED 1
 RUN mkdir /dataset
 WORKDIR /dataset
