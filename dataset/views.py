@@ -5,9 +5,35 @@ from django.http import HttpResponse
 
 
 class views:
-    TODO = HttpResponse("<h1>TODO</h1><h3>implement later</h3>")
-    ERROR = HttpResponse("<h1>Error</h1><h3>implement later</h3>")
-
+    TODO = HttpResponse("""
+    {
+        "code": 200,
+        "status": "TODO"
+    }
+    """)
+    ERROR400 = HttpResponse("""
+    {
+        "code": 400,
+        "error": {
+            "message": "Bad Request - Missing header"
+        }
+    }""")
+    ERROR404 = HttpResponse("""
+    {
+        "code": 404,
+        "error": {
+            "massage": "Not Found"
+        }
+    }
+    """)
+    ERROR500 = HttpResponse("""
+    {
+        "code": 500,
+        "error": {
+            massage: "Can't connect to Database"
+        }
+    }
+    """)
 # Create your views here.
-def close(request):
-    return views.ERROR
+def not_found(request):
+    return views.ERROR404

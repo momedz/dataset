@@ -1,19 +1,43 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.http import HttpResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from dataset.views import views
 from dataset.dataset import update as fileDataset
 
 # Create your views here.
 fileDataset.configpath = "/dataset/dataset/dataset"
+@csrf_exempt
 def datasets(request):
-    return HttpResponse(fileDataset.information())
+    try:
+        name = request.META["HTTP_X_ACCESS"]
+        return HttpResponse(fileDataset.information())
+    except:
+        return views.ERROR400
 
+@csrf_exempt
 def dataset(request, *args, **kwargs):
-    filename = kwargs.get('name')
-    return HttpResponse(fileDataset.getFile(file=filename))
+    try:
+        name = request.META["HTTP_X_ACCESS"]
+        try:
+            filename = kwargs.get('name')
+            data = fileDataset.getFile(file=filename)
+            return HttpResponse(data)
+        except:
+            return views.ERROR404
+    except:
+        return views.ERROR400
 
+@csrf_exempt
 def dataset_normalize(request, *args, **kwargs):
-    filename = kwargs.get('name')
-    return HttpResponse(fileDataset.getFile(file=filename,normalize=True))
+    try:
+        name = request.META["HTTP_X_ACCESS"]
+        try:
+            filename = kwargs.get('name')
+            data = fileDataset.getFile(file=filename,normalize=True)
+            return HttpResponse(data)
+        except:
+            return views.ERROR404
+    except:
+        return views.ERROR400
