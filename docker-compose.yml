@@ -5,6 +5,6 @@ services:
     build: .
     command: python manage.py runserver 0.0.0.0:8810
     volumes:
-      - .:/dataset
+      - .:/datasetcontroller
     ports:
       - "8810:8810"

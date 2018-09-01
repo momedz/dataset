@@ -3,11 +3,11 @@ from __future__ import unicode_literals
 from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
-from dataset.views import views
-from dataset.dataset import update as fileDataset
+from datacenter.views import views
+from datacenter.dataset import update as fileDataset
 
 # Create your views here.
-fileDataset.configpath = "/dataset/dataset/dataset"
+fileDataset.configpath = "/datasetcontroller/datacenter/dataset"
 @csrf_exempt
 def datasets(request):
     try:

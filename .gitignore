@@ -2,7 +2,7 @@
 __pycache__/
 *.py[cod]
 *$py.class
-dataset/dataset/
+datacenter/dataset/
 
 # C extensions
 *.so
