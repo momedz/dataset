@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url
 
-from dataset import v1
+from datacenter import v1
 
 v1 = [
     url(r'^api/v1/(?P<name>\w+)/normalize/$', v1.dataset_normalize),
