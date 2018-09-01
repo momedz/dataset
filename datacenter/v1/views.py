@@ -4,10 +4,10 @@ from django.http import HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 from datacenter.views import views
-from datacenter.dataset import update as fileDataset
+from dataset import update as fileDataset
 
 # Create your views here.
-fileDataset.configpath = "/datasetcontroller/datacenter/dataset"
+fileDataset.configpath = "/datasetcontroller/dataset"
 @csrf_exempt
 def datasets(request):
     try:
