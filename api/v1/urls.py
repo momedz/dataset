@@ -18,7 +18,10 @@ from django.conf.urls import url
 from dataset import v1
 
 v1 = [
-    url(r'^api/v1/(?P<name>\w+)/normalize/', v1.dataset_normalize),
-    url(r'^api/v1/(?P<name>\w+)/', v1.dataset),
-    url(r'^api/v1/', v1.datasets),
+    url(r'^api/v1/(?P<name>\w+)/normalize/$', v1.dataset_normalize),
+    url(r'^api/v1/(?P<name>\w+)/normalize$', v1.dataset_normalize),
+    url(r'^api/v1/(?P<name>\w+)/$', v1.dataset),
+    url(r'^api/v1/(?P<name>\w+)$', v1.dataset),
+    url(r'^api/v1/$', v1.datasets),
+    url(r'^api/v1$', v1.datasets),
 ]
