@@ -1,2 +1,2 @@
-# dataset-controller
+# dataset
 Manage Dataset for Clustering algorithm
