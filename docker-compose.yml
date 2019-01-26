@@ -3,6 +3,7 @@ version: '3'
 services:
   dataset-api:
     build: .
+    restart: always
     container_name: dataset
     command: python manage.py runserver 0.0.0.0:8810
     volumes:
