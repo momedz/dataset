@@ -2,8 +2,7 @@ import json
 import os
 import numpy
 
-configpath = None
-
+configpath = "./datasets/"
 
 def path():
     if configpath is None:
@@ -11,40 +10,22 @@ def path():
     else:
         return configpath
 
-def pathFile(file):
-    file_dr = os.listdir(path() + "/rawdata/real/")
-    file_ds = os.listdir(path() + "/rawdata/synthetic/")
-    pathfile = dict()
-    for line in file_dr:
-        pathfile.update({ line.split(".")[0]: path() + "/rawdata/real/" + line })
-    for line in file_ds:
-        pathfile.update({ line.split(".")[0]: path() + "/rawdata/synthetic/" + line })
-    return pathfile[file]
-
-def normalize_data(datalist):
-    min = numpy.array(datalist).min(axis=0)
-    max = numpy.array(datalist).max(axis=0)
-    datapoint = (datalist - min) / (max - min)
-    listdatapoint = dict()
-    for point in datapoint:
-        listdatapoint.update({listdatapoint.__len__(): list(point)})
-    return listdatapoint
-
-def statistics(file):
-    d = list()
-    c = list()
-    for line in open(file, "r"):
-        d.append(line.split())
-        c.append(line.split()[-1])
-    return {
-        "dimention": d[0].__len__() - 1,
-        "count": c.__len__(),
-        "cluster": set(c).__len__(),
-    }
-
 def local():
-    file_dr = os.listdir(path()+"/rawdata/real/")
-    file_ds = os.listdir(path()+"/rawdata/synthetic/")
+    # ---
+    def statistics(file):
+        d = list()
+        c = list()
+        for line in open(file, "r"):
+            d.append(line.split())
+            c.append(line.split()[-1])
+        return {
+            "dimention": d[0].__len__() - 1,
+            "count": c.__len__(),
+            "cluster": set(c).__len__(),
+        }
+    # ---
+    file_dr = os.listdir(path()+"/real/")
+    file_ds = os.listdir(path()+"/synthetic/")
     local = dict({
         "real": [],
         "synthetic": [],
@@ -52,19 +33,38 @@ def local():
     for f in file_dr:
         file = {
             "name": f.split(".")[0],
-            "stat": statistics(path()+"/rawdata/real/"+f)
+            "stat": statistics(path()+"/real/"+f)
         }
         local["real"].append(file)
 
     for f in file_ds:
         file = {
             "name": f.split(".")[0],
-            "stat": statistics(path() + "/rawdata/synthetic/" + f),
+            "stat": statistics(path() + "/synthetic/" + f),
         }
         local["synthetic"].append(file)
     return local
 
 def jsonFile(file, normalize):
+    # ---
+    def pathFile(file):
+        file_dr = os.listdir(path() + "/real/")
+        file_ds = os.listdir(path() + "/synthetic/")
+        pathfile = dict()
+        for line in file_dr:
+            pathfile.update({ line.split(".")[0]: path() + "/real/" + line })
+        for line in file_ds:
+            pathfile.update({ line.split(".")[0]: path() + "/synthetic/" + line })
+        return pathfile[file]
+    def normalize_data(datalist):
+        min = numpy.array(datalist).min(axis=0)
+        max = numpy.array(datalist).max(axis=0)
+        datapoint = (datalist - min) / (max - min)
+        listdatapoint = dict()
+        for point in datapoint:
+            listdatapoint.update({listdatapoint.__len__(): list(point)})
+        return listdatapoint
+    # ---
     with open(pathFile(file)) as rf:
         listdatapoint = dict()
         listdataclass = dict()
@@ -106,5 +106,5 @@ def update_information():
     with open(path() + '/information.json', 'w') as wf:
         wf.write(json.dumps(log, sort_keys=True, indent=4, separators=(',', ': ')))
 
-if __name__ == '__main__':
+if __name__ != '__main__':
     update_information()
