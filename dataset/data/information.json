@@ -1,161 +1,158 @@
 {
-    "local": {
-        "real": [
-            {
-                "name": "letter_recognition_16d",
-                "stat": {
-                    "cluster": 26,
-                    "count": 20000,
-                    "dimention": 16
-                }
-            },
-            {
-                "name": "shuttle_9d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 14500,
-                    "dimention": 9
-                }
-            }
-        ],
-        "synthetic": [
-            {
-                "name": "circles_10k_2d",
-                "stat": {
-                    "cluster": 4,
-                    "count": 10000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "HCM_5k",
-                "stat": {
-                    "cluster": 3,
-                    "count": 5300,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "engytime_2d",
-                "stat": {
-                    "cluster": 2,
-                    "count": 4096,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "s1_label",
-                "stat": {
-                    "cluster": 15,
-                    "count": 5000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "t5_8k",
-                "stat": {
-                    "cluster": 1,
-                    "count": 8000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "chainlink_3d",
-                "stat": {
-                    "cluster": 2,
-                    "count": 1000,
-                    "dimention": 3
-                }
-            },
-            {
-                "name": "t8_8k",
-                "stat": {
-                    "cluster": 1,
-                    "count": 8000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "s3_label",
-                "stat": {
-                    "cluster": 15,
-                    "count": 5000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "t7_10k",
-                "stat": {
-                    "cluster": 1,
-                    "count": 10000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "AHCM_20k_2d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 19396,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "wingnut_2d",
-                "stat": {
-                    "cluster": 2,
-                    "count": 1016,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "s2_label",
-                "stat": {
-                    "cluster": 15,
-                    "count": 5000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "AHCM_20k_noise_2d",
-                "stat": {
-                    "cluster": 8,
-                    "count": 20366,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "t4_8k",
-                "stat": {
-                    "cluster": 1,
-                    "count": 8000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "moons_2d",
-                "stat": {
-                    "cluster": 2,
-                    "count": 2000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "AHCM_15k_noise_2d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 15040,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "circles_2k_2d",
-                "stat": {
-                    "cluster": 2,
-                    "count": 2000,
-                    "dimention": 2
-                }
-            }
-        ]
+  "real": [
+    {
+      "name": "letter_recognition_16d",
+      "statistics": {
+        "cluster": 26,
+        "count": 20000,
+        "dimension": 85
+      }
     },
-    "online": "TODO"
+    {
+      "name": "shuttle_9d",
+      "statistics": {
+        "cluster": 7,
+        "count": 14500,
+        "dimension": 55
+      }
+    }
+  ],
+  "synthetic": [
+    {
+      "name": "t8_8k",
+      "statistics": {
+        "cluster": 1,
+        "count": 8000,
+        "dimension": 33
+      }
+    },
+    {
+      "name": "AHCM_20k_noise_2d",
+      "statistics": {
+        "cluster": 8,
+        "count": 20366,
+        "dimension": 30
+      }
+    },
+    {
+      "name": "circles_10k_2d",
+      "statistics": {
+        "cluster": 4,
+        "count": 10000,
+        "dimension": 51
+      }
+    },
+    {
+      "name": "chainlink_3d",
+      "statistics": {
+        "cluster": 2,
+        "count": 1000,
+        "dimension": 46
+      }
+    },
+    {
+      "name": "moons_2d",
+      "statistics": {
+        "cluster": 2,
+        "count": 2000,
+        "dimension": 40
+      }
+    },
+    {
+      "name": "t5_8k",
+      "statistics": {
+        "cluster": 1,
+        "count": 8000,
+        "dimension": 32
+      }
+    },
+    {
+      "name": "t4_8k",
+      "statistics": {
+        "cluster": 1,
+        "count": 8000,
+        "dimension": 30
+      }
+    },
+    {
+      "name": "AHCM_15k_noise_2d",
+      "statistics": {
+        "cluster": 7,
+        "count": 15040,
+        "dimension": 29
+      }
+    },
+    {
+      "name": "s3_label",
+      "statistics": {
+        "cluster": 15,
+        "count": 5000,
+        "dimension": 26
+      }
+    },
+    {
+      "name": "AHCM_20k_2d",
+      "statistics": {
+        "cluster": 7,
+        "count": 19396,
+        "dimension": 29
+      }
+    },
+    {
+      "name": "t7_10k",
+      "statistics": {
+        "cluster": 1,
+        "count": 10000,
+        "dimension": 33
+      }
+    },
+    {
+      "name": "HCM_5k",
+      "statistics": {
+        "cluster": 3,
+        "count": 5300,
+        "dimension": 49
+      }
+    },
+    {
+      "name": "s1_label",
+      "statistics": {
+        "cluster": 15,
+        "count": 5000,
+        "dimension": 26
+      }
+    },
+    {
+      "name": "s2_label",
+      "statistics": {
+        "cluster": 15,
+        "count": 5000,
+        "dimension": 25
+      }
+    },
+    {
+      "name": "engytime_2d",
+      "statistics": {
+        "cluster": 2,
+        "count": 4096,
+        "dimension": 31
+      }
+    },
+    {
+      "name": "circles_2k_2d",
+      "statistics": {
+        "cluster": 2,
+        "count": 2000,
+        "dimension": 41
+      }
+    },
+    {
+      "name": "wingnut_2d",
+      "statistics": {
+        "cluster": 2,
+        "count": 1016,
+        "dimension": 21
+      }
+    }
+  ]
 }

@@ -1,6 +1,6 @@
 import json
 from django.http import JsonResponse, HttpResponse
-from .services import information, getFile
+from .services import information, json_file
 
 # Create your views here.
 
@@ -15,7 +15,7 @@ def index(request):
 
 def raw_data(request, dataset):
     def GET():
-        return getFile(dataset)
+        return json_file(dataset, normalize=False)
 
     return HttpResponse({
                             'GET': GET
@@ -24,7 +24,7 @@ def raw_data(request, dataset):
 
 def normalize_data(request, dataset):
     def GET():
-        return getFile(dataset, normalize=True)
+        return json_file(dataset, normalize=True)
 
     return HttpResponse({
                             'GET': GET
