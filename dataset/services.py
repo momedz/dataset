@@ -2,7 +2,7 @@ import json
 import os
 import numpy
 
-configpath = "./datasets/"
+configpath = "./dataset/data"
 
 def path():
     if configpath is None:

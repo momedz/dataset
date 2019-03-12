@@ -15,9 +15,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from datasets import update
 
 urlpatterns = [
-    path('dataset/', include('server.dataset.urls')),
+    path('dataset/', include('dataset.urls')),
     path('admin/', admin.site.urls),
 ]

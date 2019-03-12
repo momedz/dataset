@@ -2,28 +2,60 @@
     "local": {
         "real": [
             {
-                "name": "shuttle_9d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 14500,
-                    "dimention": 9
-                }
-            },
-            {
                 "name": "letter_recognition_16d",
                 "stat": {
                     "cluster": 26,
                     "count": 20000,
                     "dimention": 16
                 }
+            },
+            {
+                "name": "shuttle_9d",
+                "stat": {
+                    "cluster": 7,
+                    "count": 14500,
+                    "dimention": 9
+                }
             }
         ],
         "synthetic": [
             {
-                "name": "s3_label",
+                "name": "circles_10k_2d",
+                "stat": {
+                    "cluster": 4,
+                    "count": 10000,
+                    "dimention": 2
+                }
+            },
+            {
+                "name": "HCM_5k",
+                "stat": {
+                    "cluster": 3,
+                    "count": 5300,
+                    "dimention": 2
+                }
+            },
+            {
+                "name": "engytime_2d",
+                "stat": {
+                    "cluster": 2,
+                    "count": 4096,
+                    "dimention": 2
+                }
+            },
+            {
+                "name": "s1_label",
                 "stat": {
                     "cluster": 15,
                     "count": 5000,
+                    "dimention": 2
+                }
+            },
+            {
+                "name": "t5_8k",
+                "stat": {
+                    "cluster": 1,
+                    "count": 8000,
                     "dimention": 2
                 }
             },
@@ -36,30 +68,6 @@
                 }
             },
             {
-                "name": "AHCM_15k_noise_2d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 15040,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "t4_8k",
-                "stat": {
-                    "cluster": 1,
-                    "count": 8000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "s2_label",
-                "stat": {
-                    "cluster": 15,
-                    "count": 5000,
-                    "dimention": 2
-                }
-            },
-            {
                 "name": "t8_8k",
                 "stat": {
                     "cluster": 1,
@@ -68,18 +76,26 @@
                 }
             },
             {
-                "name": "moons_2d",
+                "name": "s3_label",
                 "stat": {
-                    "cluster": 2,
-                    "count": 2000,
+                    "cluster": 15,
+                    "count": 5000,
                     "dimention": 2
                 }
             },
             {
-                "name": "circles_2k_2d",
+                "name": "t7_10k",
                 "stat": {
-                    "cluster": 2,
-                    "count": 2000,
+                    "cluster": 1,
+                    "count": 10000,
+                    "dimention": 2
+                }
+            },
+            {
+                "name": "AHCM_20k_2d",
+                "stat": {
+                    "cluster": 7,
+                    "count": 19396,
                     "dimention": 2
                 }
             },
@@ -92,7 +108,7 @@
                 }
             },
             {
-                "name": "s1_label",
+                "name": "s2_label",
                 "stat": {
                     "cluster": 15,
                     "count": 5000,
@@ -108,23 +124,7 @@
                 }
             },
             {
-                "name": "circles_10k_2d",
-                "stat": {
-                    "cluster": 4,
-                    "count": 10000,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "AHCM_20k_2d",
-                "stat": {
-                    "cluster": 7,
-                    "count": 19396,
-                    "dimention": 2
-                }
-            },
-            {
-                "name": "t5_8k",
+                "name": "t4_8k",
                 "stat": {
                     "cluster": 1,
                     "count": 8000,
@@ -132,26 +132,26 @@
                 }
             },
             {
-                "name": "engytime_2d",
+                "name": "moons_2d",
                 "stat": {
                     "cluster": 2,
-                    "count": 4096,
+                    "count": 2000,
                     "dimention": 2
                 }
             },
             {
-                "name": "HCM_5k",
+                "name": "AHCM_15k_noise_2d",
                 "stat": {
-                    "cluster": 3,
-                    "count": 5300,
+                    "cluster": 7,
+                    "count": 15040,
                     "dimention": 2
                 }
             },
             {
-                "name": "t7_10k",
+                "name": "circles_2k_2d",
                 "stat": {
-                    "cluster": 1,
-                    "count": 10000,
+                    "cluster": 2,
+                    "count": 2000,
                     "dimention": 2
                 }
             }
