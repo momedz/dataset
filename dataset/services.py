@@ -16,20 +16,20 @@ class DataStatistics(object):
 def local() -> Dict[str, List[Dict[str, str]]]:
     # ---
     def statistics(file: str) -> Dict[str, int]:
-        d: List[str] = list(map(lambda line: str(line.split()), open(file, "r")))
-        c: List[str] = list(map(lambda line: line.split()[-1], open(file, "r")))
+        d: List[str] = [str(line.split()) for line in open(file, "r")]
+        c: List[str] = [line.split()[-1] for line in open(file, "r")]
         return DataStatistics(len(d.pop()), len(set(c)), len(c)).__dict__
 
     # ---
     return dict({
-        "real": list(map(lambda path: {
+        "real": [{
             "name": path.split(".")[0],
             "statistics": statistics(config_path + "/real/" + path)
-        }, os.listdir(config_path + "/real/"))),
-        "synthetic": list(map(lambda path: {
+        } for path in os.listdir(config_path + "/real/")],
+        "synthetic": [{
             "name": path.split(".")[0],
             "statistics": statistics(config_path + "/synthetic/" + path)
-        }, os.listdir(config_path + "/synthetic/"))),
+        } for path in os.listdir(config_path + "/synthetic/")]
     })
 
 
@@ -37,36 +37,31 @@ def json_file(file, normalize) -> str:
     # ---
     def path_file(file: str) -> str:
         paths: List[str] = os.listdir(config_path + "/real/") + os.listdir(config_path + "/synthetic/")
-        path: str = list(filter(lambda path: file in path, paths)).pop()
+        path: str = [path for path in paths if file in path].pop()
+
         if ".synthetic." in path:
             return config_path + '/synthetic/' + path
         else:
             return config_path + '/real/' + path
 
-    def normalize_data(datalist):
+    def normalize_data(datalist: List[List[float]]) -> List[List[float]]:
         min = np.array(datalist).min(axis=0)
         max = np.array(datalist).max(axis=0)
-        datapoint = (datalist - min) / (max - min)
-        listdatapoint = dict()
-        for point in datapoint:
-            listdatapoint.update({listdatapoint.__len__(): list(point)})
-        return listdatapoint
+        datapoint = (np.array(datalist) - min) / (max - min)
+        return [list(p) for p in datapoint]
 
     # ---
-    datas = list(map(lambda x: x.strip().split(), open(path_file(file))))
-    # print(list(map(lambda x: x[-1], datas)))
-    # print(list(map(lambda x: x[0:-1], datas)))
+    datas = [x.strip().split() for x in open(path_file(file), "r")]
     data = dict({
         "data": {
-            "point": list(map(lambda x: list(map(lambda y: float(y), x[0:-1])), datas)),
-            "class": list(map(lambda x: x[-1], datas))
+            "point": [[float(y) for y in x[0:-1]] for x in datas],
+            "class": [p[-1] for p in datas],
         },
         "count": datas.__len__(),
         "dimension": datas.pop().__len__()
     })
     if normalize:
         data["data"]["point"] = normalize_data(data["data"]["point"])
-
     return json.dumps(data)
 
 
