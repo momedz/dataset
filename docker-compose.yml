@@ -1,12 +1,54 @@
-version: '3'
+version: '3.3'
+
+volumes:
+  mongo-data:
+    external:
+      name: mongo-data
+
+networks:
+  database:
+    external:
+      name: database
 
 services:
-  dataset-api:
+
+  mongo:
+    image: mongo:latest
+    restart: always
+    container_name: mongo
+    command: mongod --replSet rs
+    environment:
+      - MONGODB_USER=master
+      - MONGODB_PASS=degree
+    volumes:
+      - mongo-data:/data/db
+    ports:
+      - 27017:27017
+    networks:
+      - database
+
+  mongo-express:
+    image: mongo-express
+    container_name: mongo-express
+    restart: always
+    environment:
+      - ME_CONFIG_BASICAUTH_USERNAME=master
+      - ME_CONFIG_BASICAUTH_PASSWORD=degree
+    ports:
+      - 8081:8081
+    networks:
+      - database
+    depends_on:
+      - mongo
+
+  dataset:
     build: .
     restart: always
     container_name: dataset
-    command: python manage.py runserver 0.0.0.0:8810
+    command: python manage.py runserver 0.0.0.0:8000
     volumes:
-      - .:/datasetcontroller
+      - .:/app/dataset
     ports:
-      - "8810:8810"
+      - 8000:8000
+    networks:
+      - database

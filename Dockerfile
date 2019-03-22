@@ -1,8 +1,15 @@
-FROM python:2.7-slim
+FROM python:3.7.2-slim
+
 ENV PYTHONUNBUFFERED 1
-RUN mkdir /datasetcontroller
-WORKDIR /datasetcontroller
+
+RUN mkdir -p /app/dataset
+
+WORKDIR /app/dataset
+
 RUN pip install --upgrade pip
-ADD requirements.txt /datasetcontroller/
+
+ADD requirements.txt /app/dataset/
+
 RUN pip install -r requirements.txt
-ADD . /datasetcontroller/
+
+ADD . /app/dataset/
