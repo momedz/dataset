@@ -5,13 +5,16 @@ database = client['queue']
 collection = database['task']
 
 data = [{
-    'assign': 'hscmstream',
+    'assign': 'denstream',
     'parameter': {
-        'radius': round(r * 0.05, 2),
-        'np': np
+        'init': 1000,
+        'lambda': 0.01,
+        'epsilon': round(r * 0.05, 2),
+        'mu': np,
+        'beta': 0.2,
     },
     'dataset': {
-        'name': 'AHCM_20k_2d',
+        'name': 'HCM_5k',
         'normalize': False
     },
     'status': 'todo'
@@ -22,10 +25,13 @@ data = [{
 # print(data.__len__())
 
 # data = [{
-#     'assign': 'hscmstream',
+#     'assign': 'denstream',
 #     'parameter': {
-#         'radius': 0.25,
-#         'np': 2
+#         'init': 1000,
+#         'lambda': 0.01,
+#         'epsilon': 0.5,
+#         'mu': 10,
+#         'beta': 0.2,
 #     },
 #     'dataset': {
 #         'name': 'HCM_5k',
