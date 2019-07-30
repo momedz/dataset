@@ -16,9 +16,9 @@ class DataStatistics(object):
 def local() -> Dict[str, List[Dict[str, str]]]:
     # ---
     def statistics(file: str) -> Dict[str, int]:
-        d: List[str] = [str(line.split()) for line in open(file, "r")]
+        d: List[List[str]] = [line.split() for line in open(file, "r")]
         c: List[str] = [line.split()[-1] for line in open(file, "r")]
-        return DataStatistics(len(d.pop()), len(set(c)), len(c)).__dict__
+        return DataStatistics(len(d.pop()) - 1, len(set(c)), len(c)).__dict__
 
     # ---
     return dict({

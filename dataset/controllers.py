@@ -30,16 +30,3 @@ def normalize_data(request, dataset):
     return HttpResponse({
                             'GET': GET
                         }[request.method]())
-
-# import random
-# client = MongoClient('10.80.37.208', 27017)
-# # client['dataset'].create_collection('test')
-# db = client['dataset']
-# test = db['test']
-# name = "Karn"
-# surname = "Klawmprasrerdh"
-# test.insert_one({
-#     "name": name,
-#     "random": random.sample(range(777), 4)
-# })
-# print(db.collection_names(include_system_collections=True))
