@@ -15,25 +15,17 @@
         "count": 20000,
         "dimension": 16
       }
+    },
+    {
+      "name": "covtype",
+      "statistics": {
+        "cluster": 7,
+        "count": 581012,
+        "dimension": 54
+      }
     }
   ],
   "synthetic": [
-    {
-      "name": "AHCM_20k_noise_2d",
-      "statistics": {
-        "cluster": 8,
-        "count": 20366,
-        "dimension": 2
-      }
-    },
-    {
-      "name": "s1_label",
-      "statistics": {
-        "cluster": 15,
-        "count": 5000,
-        "dimension": 2
-      }
-    },
     {
       "name": "wingnut_2d",
       "statistics": {
@@ -43,39 +35,23 @@
       }
     },
     {
-      "name": "HCM_5k",
+      "name": "AHCM_20k_noise_2d",
       "statistics": {
-        "cluster": 3,
-        "count": 5300,
+        "cluster": 8,
+        "count": 20366,
         "dimension": 2
       }
     },
     {
-      "name": "t5_8k",
+      "name": "t7_10k",
       "statistics": {
         "cluster": 1,
-        "count": 8000,
-        "dimension": 2
-      }
-    },
-    {
-      "name": "chainlink_3d",
-      "statistics": {
-        "cluster": 2,
-        "count": 1000,
-        "dimension": 3
-      }
-    },
-    {
-      "name": "circles_10k_2d",
-      "statistics": {
-        "cluster": 4,
         "count": 10000,
         "dimension": 2
       }
     },
     {
-      "name": "t4_8k",
+      "name": "t8_8k",
       "statistics": {
         "cluster": 1,
         "count": 8000,
@@ -91,7 +67,7 @@
       }
     },
     {
-      "name": "s3_label",
+      "name": "s1_label",
       "statistics": {
         "cluster": 15,
         "count": 5000,
@@ -99,15 +75,7 @@
       }
     },
     {
-      "name": "engytime_2d",
-      "statistics": {
-        "cluster": 2,
-        "count": 4096,
-        "dimension": 2
-      }
-    },
-    {
-      "name": "circles_2k_2d",
+      "name": "moons_2d",
       "statistics": {
         "cluster": 2,
         "count": 2000,
@@ -115,10 +83,10 @@
       }
     },
     {
-      "name": "AHCM_20k_2d",
+      "name": "s3_label",
       "statistics": {
-        "cluster": 7,
-        "count": 19396,
+        "cluster": 15,
+        "count": 5000,
         "dimension": 2
       }
     },
@@ -131,7 +99,15 @@
       }
     },
     {
-      "name": "t8_8k",
+      "name": "circles_10k_2d",
+      "statistics": {
+        "cluster": 4,
+        "count": 10000,
+        "dimension": 2
+      }
+    },
+    {
+      "name": "t5_8k",
       "statistics": {
         "cluster": 1,
         "count": 8000,
@@ -139,18 +115,50 @@
       }
     },
     {
-      "name": "t7_10k",
+      "name": "AHCM_20k_2d",
       "statistics": {
-        "cluster": 1,
-        "count": 10000,
+        "cluster": 7,
+        "count": 19396,
         "dimension": 2
       }
     },
     {
-      "name": "moons_2d",
+      "name": "circles_2k_2d",
       "statistics": {
         "cluster": 2,
         "count": 2000,
+        "dimension": 2
+      }
+    },
+    {
+      "name": "HCM_5k",
+      "statistics": {
+        "cluster": 3,
+        "count": 5300,
+        "dimension": 2
+      }
+    },
+    {
+      "name": "t4_8k",
+      "statistics": {
+        "cluster": 1,
+        "count": 8000,
+        "dimension": 2
+      }
+    },
+    {
+      "name": "chainlink_3d",
+      "statistics": {
+        "cluster": 2,
+        "count": 1000,
+        "dimension": 3
+      }
+    },
+    {
+      "name": "engytime_2d",
+      "statistics": {
+        "cluster": 2,
+        "count": 4096,
         "dimension": 2
       }
     }
